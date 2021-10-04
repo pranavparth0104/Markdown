@@ -1,0 +1,66 @@
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Auth</title>
+      <link rel="stylesheet" href="/css/style1.css">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title">
+            Signup 
+         </div>
+         <%- include ("./partials/messages"); %>
+
+         <form  action="/users/register" method="POST">
+            <div class="field">
+                <input type="text"
+                type="name"
+                id="name"
+                name="name"
+                class="form-control"
+                value="<%= typeof name != 'undefined' ? name : '' %>" required>
+                <label for="name">Name</label>
+             </div>
+            <div class="field">
+               <input type="email"
+               id="email"
+               name="email"
+               class="form-control"
+               value="<%= typeof email != 'undefined' ? email : '' %>" required>
+               <label for="email">Email Address</label>
+            </div>
+            <div class="field">
+               <input  type="password"
+               id="password"
+               name="password"
+               class="form-control"
+               value="<%= typeof password != 'undefined' ? password : '' %>" required>
+               <label for="password">Create Password</label>
+            </div>
+            <div class="field">
+                <input  type="password"
+                id="password2"
+                name="password2"
+                class="form-control"
+                value="<%= typeof password2 != 'undefined' ? password2 : '' %>" required>
+                <label for="password2">Confirm Password</label>
+             </div>
+            <!-- <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Remember me</label>
+               </div>
+               <div class="pass-link">
+                  <a href="#">Forgot password?</a>
+               </div>
+            </div> -->
+            <div class="field">
+               <input type="submit" value="Register">
+            </div>
+            <div class="signup-link">
+               Already a Member? <a href="/">Login</a>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>
